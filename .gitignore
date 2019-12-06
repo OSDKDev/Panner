@@ -1,0 +1,6 @@
+.vs/
+[Oo]bj/
+[Bb]in/
+[Tt]est[Rr]esults/
+nupkgs/
+/tests/Sort.Tests/coverage.json
