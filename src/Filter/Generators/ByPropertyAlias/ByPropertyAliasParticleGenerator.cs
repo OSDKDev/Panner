@@ -11,7 +11,7 @@
     public class ByPropertyAliasParticleGenerator<TEntity> : IFilterParticleGenerator<TEntity>
         where TEntity : class
     {
-        private readonly Dictionary<string, PropertyInfo> properties;
+        internal readonly Dictionary<string, PropertyInfo> properties;
 
         public ByPropertyAliasParticleGenerator()
         {
