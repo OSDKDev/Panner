@@ -8,7 +8,7 @@
     public class ByPropertyAliasParticleGenerator<TEntity> : ISortParticleGenerator<TEntity>
         where TEntity : class
     {
-        private readonly Dictionary<string, PropertyInfo> properties;
+        internal readonly Dictionary<string, PropertyInfo> properties;
 
         public ByPropertyAliasParticleGenerator()
         {

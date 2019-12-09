@@ -2,7 +2,7 @@
 {
     using Panner.Interfaces;
 
-    internal interface IPEntityBuilder
+    public interface IPEntityBuilder
     {
         TParticleGenerator GetOrCreateGenerator<TParticle, TParticleGenerator>() where TParticleGenerator : class, IParticleGenerator<TParticle>, new();
 

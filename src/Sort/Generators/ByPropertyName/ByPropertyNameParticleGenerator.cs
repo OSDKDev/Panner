@@ -8,8 +8,8 @@
     public class ByPropertyNameParticleGenerator<TEntity> : ISortParticleGenerator<TEntity>
         where TEntity : class
     {
-        private readonly Type type;
-        private readonly List<PropertyInfo> properties;
+        internal readonly Type type;
+        internal readonly List<PropertyInfo> properties;
 
         public ByPropertyNameParticleGenerator()
         {
