@@ -1,0 +1,18 @@
+name: label-top-issues.yml
+
+on:
+  schedule:
+  - cron:  '10 * * * *'
+
+jobs:
+  labelTopIssues:
+    name: Label Top Issues
+    runs-on: ubuntu-latest
+    steps:
+    - name: Label Issues
+      uses: adamzolyak/top-issues-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        TOP_NUMBER_OF_ISSUES: 3
+        TOP_LABEL_NAME: "👍 Top 3!"
+        TOP_LABEL_COLOR: e0d55e
