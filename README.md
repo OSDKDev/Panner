@@ -35,7 +35,7 @@ builder.Entity<Post>()
         .IsFilterableAs("Creation")
     );
 
-
+// And then we build our context.
 IPContext context = builder.Build(); 
 
 // Ta-daah! Now we have a context!
