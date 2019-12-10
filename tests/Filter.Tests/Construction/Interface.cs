@@ -4,13 +4,22 @@
 
     public class Interface
     {
+        private PEntityBuilder<Interface> pEntityBuilder { get; set; }
         private PPropertyBuilder<Interface> pPropertyBuilder { get; set; }
 
         public Interface()
         {
-            this.pPropertyBuilder = new PContextBuilder()
-                .Entity<Interface>()
+            this.pEntityBuilder = new PContextBuilder()
+                .Entity<Interface>();
+
+            this.pPropertyBuilder = this.pEntityBuilder
                 .Property(p => p.pPropertyBuilder);
+        }
+
+        public void AllAreFilterable()
+        {
+            this.pEntityBuilder
+                .AllPropertiesAreFilterableByName();
         }
 
 

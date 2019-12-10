@@ -17,6 +17,12 @@ Setting up your context to define your entities and rules.
 ```csharp
 var builder = new PContext();
 
+// Entity wide configuration (Option 1)
+builder.Entity<Post>()
+    .AllPropertiesAreSortableByName();
+    .AllPropertiesAreFilterableByName();
+
+// A more granular approach (Option 2)
 builder.Entity<Post>()
     .Property(x => x.Id, o => o
         .IsSortableByName()
@@ -29,6 +35,7 @@ builder.Entity<Post>()
         .IsFilterableAs("Creation")
     );
 
+// And then we build our context.
 IPContext context = builder.Build(); 
 
 // Ta-daah! Now we have a context!
