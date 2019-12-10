@@ -1,16 +1,16 @@
 categories:
-  - title: '🚀 Features'
+  - title: 'Features'
     label: 'PR-Feat'
-  - title: '🐛 Bug Fixes'
+  - title: 'Bug Fixes'
     label: 'PR-Fix'
   - title: 'Internals'
     label: 'PR-Internal'
-change-template: '- $TITLE @$AUTHOR - #$NUMBER'
+change-template: '- *$TITLE* by @$AUTHOR - #$NUMBER'
 template: |
 [![Nuget](https://img.shields.io/badge/NuGet-v9.9.9-brightgreen)](https://www.nuget.org/packages/Panner/9.9.9) [![Coverage Status](https://coveralls.io/repos/github/OSDKDev/Panner/badge.svg?branch=refs/tags/v9.9.9)](https://coveralls.io/github/OSDKDev/Panner?branch=refs/tags/v9.9.9)
 ---
 
-  $CHANGES
+$CHANGES
   
 ---
 
