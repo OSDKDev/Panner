@@ -3,6 +3,8 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text.RegularExpressions;
+    using Panner.Filter.Generators;
+    using Panner.Interfaces;
 
     public static class PContextFilterExtensions
     {
@@ -14,18 +16,26 @@
             where T : class
         {
             var particlesRaw = new List<IFilterParticle<T>>();
-            var generators = pContext.GetGenerators<T, IFilterParticle<T>>();
 
-            Regex regx = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
+            var generators = new List<IParticleGenerator<IFilterParticle<T>>>()
+            {
+                // Default generators
+                new ComplexLogicGenerator<T>()
+            };
+
+            generators.AddRange(pContext.GetGenerators<T, IFilterParticle<T>>());
+
+            // Matching commas outside of quotes and parentheses
+            Regex regx = new Regex("[,](?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))(?=(((?!\\)).)*\\()|[^\\(\\)]*$)");
             var splitInput = regx.Split(input);
 
             bool wasAbleToParse = true;
 
-            foreach (var sort in splitInput)
+            foreach (var filter in splitInput)
             {
                 IFilterParticle<T> particle = null;
 
-                wasAbleToParse &= generators.Any(x => x.TryGenerate(pContext, sort, out particle));
+                wasAbleToParse &= generators.Any(x => x.TryGenerate(pContext, filter, out particle));
 
                 if (!(particle is null))
                     particlesRaw.Add(particle);
