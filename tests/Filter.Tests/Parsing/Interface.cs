@@ -22,7 +22,6 @@
             pContext = x.Build();
         }
 
-        [Fact]
         public void TryParse()
         {
 #pragma warning disable IDE0059 // Unnecessary assignment of a value
