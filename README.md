@@ -165,9 +165,16 @@ builder.Entity<Post>()
 </p></details>
 
 
-
-
-
-
-
-
+### Frequently Asked Questions
+<details>
+    <summary>
+        <b>Using different culture for filter value conversions?</b><br/>
+    </summary>
+    <p>
+        
+You can change `CurrentInfo.CurrentCulture` before calling `context.TryParseCsv([...])`!
+    
+```csharp
+CurrentInfo.CultureInfo = new CultureInfo("es"); //So simple...!
+```
+</p></details>
