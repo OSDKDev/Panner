@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
     <RootNamespace>Panner</RootNamespace>
     <AssemblyName>Panner</AssemblyName>
     <Authors>OSDKDev</Authors>
@@ -14,12 +14,7 @@
     <PackageIcon>logo-flat.png</PackageIcon>
     <Copyright>Copyright (c) 2019 OSDKDev</Copyright>
     <Description>Clean, customizable and extensible framework for the configuration, parsing and application of sorts and filters from a CSV.</Description>
-    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-  </ItemGroup>
 
 
   <ItemGroup>
