@@ -1,5 +1,6 @@
 ﻿namespace Panner
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text.RegularExpressions;
@@ -43,7 +44,7 @@
 
             particles = wasAbleToParse ?
                 particlesRaw :
-                Enumerable.Empty<IFilterParticle<T>>();
+                Array.Empty<IFilterParticle<T>>();
 
             return wasAbleToParse;
         }

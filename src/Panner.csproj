@@ -14,6 +14,7 @@
     <PackageIcon>logo-flat.png</PackageIcon>
     <Copyright>Copyright (c) 2019 OSDKDev</Copyright>
     <Description>Clean, customizable and extensible framework for the configuration, parsing and application of sorts and filters from a CSV.</Description>
+    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
 
 

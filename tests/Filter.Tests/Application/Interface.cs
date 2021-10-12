@@ -1,5 +1,6 @@
 ﻿namespace Filter.Tests.Application
 {
+    using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
@@ -11,8 +12,8 @@
         [SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value")]
         public void Builds()
         {
-            IEnumerable<Interface> entities = Enumerable.Empty<Interface>();
-            IEnumerable<IFilterParticle<Interface>> particles = Enumerable.Empty<IFilterParticle<Interface>>();
+            IEnumerable<Interface> entities = Array.Empty<Interface>();
+            IEnumerable<IFilterParticle<Interface>> particles = Array.Empty<IFilterParticle<Interface>>();
 
             IQueryable<Interface> works;
 
