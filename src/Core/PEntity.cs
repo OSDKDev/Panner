@@ -17,7 +17,7 @@
         public IEnumerable<IParticleGenerator<T>> GetGenerators<T>()
         {
             this._ParticleGenerators.TryGetValue(typeof(T), out var particleGenerators);
-            return particleGenerators?.Select(x => (IParticleGenerator<T>)x) ?? Enumerable.Empty<IParticleGenerator<T>>();
+            return particleGenerators?.Select(x => (IParticleGenerator<T>)x) ?? Array.Empty<IParticleGenerator<T>>();
         }
     }
 }

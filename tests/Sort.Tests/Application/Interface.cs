@@ -1,5 +1,6 @@
 ﻿namespace Sort.Tests.Application
 {
+    using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
@@ -10,8 +11,8 @@
         [SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value")]
         public void Builds()
         {
-            IEnumerable<Interface> entities = Enumerable.Empty<Interface>();
-            IEnumerable<ISortParticle<Interface>> particles = Enumerable.Empty<ISortParticle<Interface>>();
+            IEnumerable<Interface> entities = Array.Empty<Interface>();
+            IEnumerable<ISortParticle<Interface>> particles = Array.Empty<ISortParticle<Interface>>();
 
             IOrderedQueryable<Interface> works;
 

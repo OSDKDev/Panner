@@ -1,5 +1,6 @@
 ﻿namespace Panner
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -32,7 +33,7 @@
 
             particles = wasAbleToParse ?
                 particlesRaw :
-                Enumerable.Empty<ISortParticle<T>>();
+                Array.Empty<ISortParticle<T>>();
 
             return wasAbleToParse;
         }

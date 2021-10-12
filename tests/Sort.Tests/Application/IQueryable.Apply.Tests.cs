@@ -38,7 +38,7 @@
         {
             var result = IQueryableExtensions.Apply(
                 source: GetIQueryable(),
-                particles: Enumerable.Empty<ISortParticle<IQueryableApplyTests>>()
+                particles: Array.Empty<ISortParticle<IQueryableApplyTests>>()
             );
 
             Assert.NotNull(result);
